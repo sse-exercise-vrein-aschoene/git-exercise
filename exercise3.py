@@ -26,13 +26,11 @@ class Rectangle:
         return self.corner(3)
 
 
-    def contains(self, point: Point2D) -> bool:
-        ll_px = point.x - self._lower_left.x
-        ll_py = point.y - self._lower_left.y
-        return (
-            self._is_in_interval(ll_px, 0.0, self._dx) and
-            self._is_in_interval(ll_py, 0.0, self._dy)
-        )
+    def contains(self, point: Point2D) -> bool: 
+        ll_px = point.x - self._lower_left.x 
+        ll_py = point.y - self._lower_left.y 
+        return ( self._is_in_interval(ll_px, 0.0, self._dx) 
+        and self._is_in_interval(ll_py, 0.0, self._dy) )
 
 
     def _is_idx_on_upper_edge(self, i: int) -> bool:
