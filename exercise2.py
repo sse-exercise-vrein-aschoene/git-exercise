@@ -38,7 +38,10 @@ def test_point_vector_addition() -> None:
 
 def test_point_vector_subtraction() -> None:
     point = Point2D(1.0, 2.0)
-    # Task B: make the test below pass (implement __isub__)
     point -= Vector([1.1, 2.2])
     assert isclose(point.x, -0.1)
     assert isclose(point.y, -0.2)
+
+test_point_construction()
+test_point_vector_addition()
+test_point_vector_subtraction()
