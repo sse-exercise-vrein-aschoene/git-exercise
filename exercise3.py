@@ -26,9 +26,9 @@ class Rectangle:
         return self.corner(3)
 
     def contains(self, point: Point2D, tolerance: float = 0.0) -> bool:
-    ll_px = point.x - self._lower_left.x
-    ll_py = point.y - self._lower_left.y
-    return (
+        ll_px = point.x - self._lower_left.x
+        ll_py = point.y - self._lower_left.y
+        return (
         self._is_in_interval(ll_px, -tolerance, self._dx + tolerance) and
         self._is_in_interval(ll_py, -tolerance, self._dy + tolerance)
     )
@@ -84,3 +84,6 @@ def test_rectangle_contains_tolerance() -> None:
     assert rectangle.contains(upper_left, tolerance=eps*2.0)
     assert rectangle.contains(lower_right, tolerance=eps*2.0)
     assert rectangle.contains(upper_right, tolerance=eps*2.0)
+
+test_rectangle_contains_exact()
+test_rectangle_contains_tolerance()
